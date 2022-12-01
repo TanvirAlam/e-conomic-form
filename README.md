@@ -26,3 +26,22 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 ## How do I deploy this?
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+
+## Task at hand: Deploy
+
+### Build UI for an e-conomic trial form similar to the one we use on the e-conomic website.
+
+-[ ] The form must look good on mobile, as well as both big and small desktop screens.
+
+-[ ] You are expected to use HTML, CSS and JS to solve the task.
+
+-[ ] You are expected to use similar colors, like black/blue background, white text, checkbox with orange background - however, it doesn’t have to be completely similar to the example on the right
+
+-[ ] On desktop, the form should have a width of 480px (and be horizontally centered). On mobile, the form should fill out 90% of the screen (and also be horizontally centered). You decide yourself what size to use for mobile
+
+-[ ] Please make form components configurable. Meaning that an employee (CMS Editor) with some minimal training should be able to change fields validation rules, add/remove fields to form, and change field labels.
+
+-[ ] 3 fields are required in the form (marked by asterixes). The message about missing data should be displayed below the field (see example to the right). Validation should happen when the user submits a
+form. Phone field has a popup functionality.
+
+-[ ] You are free to use any libs you need, like jQuery or just clean JavaScript. You decide.
