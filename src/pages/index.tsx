@@ -1,12 +1,19 @@
-import { type NextPage } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 import { trpc } from "../utils/trpc";
 import EForm from "../component/Form";
+import { fetchEForms } from "../utils/fetchEForm";
 
-const Home: NextPage = () => {
+import { EForms } from '../types/typings'
+
+type Props = {
+  eFromData: EForms[]
+}
+
+const Home = ({eFromData}: Props) => {
   const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
   return (
@@ -17,10 +24,20 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b bg-white p-2">
-        <EForm />
+        <EForm eFromData={eFromData} />
       </main>
     </>
   );
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const eFromData = await fetchEForms()
+
+  return {
+    props: {
+      eFromData
+    }
+  }
+}

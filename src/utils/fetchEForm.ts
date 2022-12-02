@@ -2,7 +2,7 @@ import { EForms } from '../types/typings'
 import { groq } from 'next-sanity'
 import { sanityClient } from '../../sanity'
 
-const query = groq`*[_type == "e-form"]`
+const query = groq`*[_type == "eform"]`
 
 export const fetchEForms = async () => {
     const eForms: EForms[] = await sanityClient.fetch(query)

@@ -1,12 +1,16 @@
 import React from 'react'
+import { EForms } from '../types/typings';
 import CInput from './CInput';
 import ELinks from './ELinks';
 import EInput from './Input';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-type Props = {}
+type Props = {
+    eFromData: EForms[]
+}
 
-export default function EconomicForm({}: Props) {
+export default function EconomicForm({eFromData}: Props) {
+    console.log(eFromData)
   return (
     <section className="bg-[#2d2b34] w-full lg:w-[480px] rounded-lg">
         <div className="w-full">

@@ -10,7 +10,6 @@ const query = groq`*[_type == "eform"]`
 
 const EFormsObject = async (req: NextApiRequest, res: NextApiResponse) => {
     const efrom: EForms[] = await sanityClient.fetch(query)
-    console.log(efrom)
     res.status(200).json({ efrom });
 };
 
