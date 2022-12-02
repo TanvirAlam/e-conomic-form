@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 
+e-form/node_modules
 # testing
 /coverage
 
