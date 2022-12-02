@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import React from 'react'
-import { EForms } from '../types/typings';
 
 export default function ELinks({formData}: any) {
   return (

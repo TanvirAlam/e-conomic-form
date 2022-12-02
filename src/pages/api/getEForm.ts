@@ -2,9 +2,7 @@ import { type NextApiRequest, type NextApiResponse } from "next";
 import { groq } from 'next-sanity';
 import { sanityClient } from '../../../sanity';
 
-import { prisma } from "../../server/db/client";
-
-import { EForms } from "../../types/typings";
+import type { EForms } from "../../types/typings";
 
 const query = groq`*[_type == "eform"]`
 

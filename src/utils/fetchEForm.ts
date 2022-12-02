@@ -1,4 +1,4 @@
-import { EForms } from '../types/typings'
+import type { EForms } from '../types/typings'
 import { groq } from 'next-sanity'
 import { sanityClient } from '../../sanity'
 

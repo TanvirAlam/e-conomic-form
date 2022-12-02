@@ -1,7 +1,6 @@
 import React from 'react'
 import { AiOutlineQuestionCircle } from 'react-icons/ai';
 import Tooltip from '../utils/Tooltips';
-import { EForms } from '../types/typings';
 
 export default function EInput({formData}: any) {
   return (

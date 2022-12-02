@@ -1,5 +1,5 @@
 import React from 'react'
-import { EForms } from '../types/typings';
+import type { EForms } from '../types/typings';
 import CInput from './CInput';
 import ELinks from './ELinks';
 import EInput from './Input';
@@ -9,13 +9,12 @@ type Props = {
 }
 
 export default function EconomicForm({eFromData}: Props) {
-    console.log(eFromData)
   return (
     <section className="bg-[#2d2b34] w-full lg:w-[480px] rounded-lg">
         <div className="w-full">
             <form className="shadow-md rounded px-8 pt-6 mb-4">
                 {
-                    eFromData?.sort((a:any,b:any) => (a.sortNum > b.sortNum) ? 1 : -1)
+                    eFromData?.sort((a:any, b:any) => (a.sortNum > b.sortNum) ? 1 : -1)
                         .map((formData: any) => {
                             switch(formData.inputOptions) {
                                 case "text":
