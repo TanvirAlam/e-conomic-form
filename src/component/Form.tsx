@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react'
 import CInput from './CInput';
 import ELinks from './ELinks';
@@ -16,12 +15,12 @@ export default function EconomicForm({}: Props) {
                 <ELinks />
                 <CInput />
                 <div className="flex items-center justify-center relative p-10">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="button">
+                    <button className="bg-[#ef7d00] hover:bg-[#ef7d00]/50 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:shadow-outline" type="button">
                         Submit
                     </button>
                 </div>
             </form>
-            <p className="text-center text-gray-500 text-xs bg-red-400">
+            <p className="text-center text-white text-xs bg-red-400 rounded-md">
                 &copy;2022 Tanvir Alam
             </p>
         </div>
