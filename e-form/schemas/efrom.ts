@@ -19,6 +19,7 @@ export default defineType({
                     { title: 'Text', value: 'text' },
                     { title: 'Phone', value: 'number' },
                     { title: 'Email', value: 'email' },
+                    { title: 'Elinks', value: 'link' },
                     { title: 'Checkbox', value: 'checkbox' },
                 ],
             },
@@ -31,6 +32,21 @@ export default defineType({
         defineField({
             name: 'toolkit',
             title: 'Toolkit Message',
+            type: 'string',
+        }),
+        defineField({
+            name: 'openLinkText',
+            title: 'Open Link Text',
+            type: 'string',
+        }),
+        defineField({
+            name: 'openLinkName',
+            title: 'Open Link Name',
+            type: 'string',
+        }),
+        defineField({
+            name: 'openLinkUrl',
+            title: 'Open Link Url',
             type: 'string',
         })
     ]

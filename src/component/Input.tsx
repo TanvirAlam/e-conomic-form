@@ -4,8 +4,6 @@ import Tooltip from '../utils/Tooltips';
 import { EForms } from '../types/typings';
 
 export default function EInput({formData}: EForms) {
-    console.log(formData)
-
   return (
     <div className="mb-4">
         <label className="text-white text-sm mb-2 flex items-center gap-2" htmlFor="firstLast">
