@@ -12,6 +12,7 @@ export interface InputsTypes extends SanityBody {
 }
 
 export interface EForms extends SanityBody {
+    inputOptions: any;
     _type: "e-form";
     label: string;
     inputTypes: InputsTypes[];

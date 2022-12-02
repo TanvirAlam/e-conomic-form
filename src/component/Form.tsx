@@ -4,18 +4,32 @@ import CInput from './CInput';
 import ELinks from './ELinks';
 import EInput from './Input';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {
     eFromData: EForms[]
 }
 
 export default function EconomicForm({eFromData}: Props) {
-    console.log(eFromData)
   return (
     <section className="bg-[#2d2b34] w-full lg:w-[480px] rounded-lg">
         <div className="w-full">
             <form className="shadow-md rounded px-8 pt-6 mb-4">
-                <EInput />
+                {
+                    eFromData?.map((formData) => {
+                        switch(formData.inputOptions) {
+                            case "text":
+                                return (<EInput key={formData._id} formData={formData} />)
+                                break;
+                            case "number":
+                                return (<EInput key={formData._id} formData={formData} />)
+                                break;
+                            case "email":
+                                return (<EInput key={formData._id} formData={formData} />)
+                                break;  
+                            default:
+                                console.log("Form Data")
+                        }
+                    })
+                }
                 <ELinks />
                 <CInput />
                 <div className="flex items-center justify-center relative p-10">
