@@ -4,8 +4,8 @@ type Props = {
     message: string
 }
 
-export default function processErrorMessage({ message }: Props) {
+export default function ProcessErrorMessage({ message }: Props) {
   return (
-        <p className={`text-red-500 text-xs text-right`}>{message}</p>
+        <p className={`text-red-500 text-xs text-right pt-2`}>{message}</p>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
 import { FormContext } from '../utils/FormContext'
+import ProcessErrorMessage from '../utils/ProcessErrorMessage'
 
 export default function CInput({formData}: any) {
     const [state, setState] = useContext(FormContext)
@@ -19,7 +20,7 @@ export default function CInput({formData}: any) {
     }
 
     return (
-        <div className="mb-6 flex space-x-2 h-10 relative">
+        <div className="mb-6 flex space-x-2 h-14 relative">
             <input type="checkbox" className="w-6 h-6 text-[#ef7d00]" id={formData.inputOptions} onChange={handleInputChange} />
             {
                 formData.inputOptions === "cMust" && (<AcceptenceInput formData={formData} />) 
@@ -38,7 +39,7 @@ const AcceptenceInput = ({formData}: any) => {
                 {formData.checkboxLinkText}{" "}
                 <Link className="border-b" href={formData.checkboxLinkName1url}>{formData.checkboxLinkName1}</Link>{" "}og{" "} 
                 <Link className="border-b" href={formData.checkboxLinkName2url}>{formData.checkboxLinkName2}</Link></p>
-            <p className={`hidden text-red-500 text-xs text-right`}>{formData.checkboxLinkError}</p>
+                <ProcessErrorMessage message={formData.checkboxLinkError} />
         </div>
     )
 }

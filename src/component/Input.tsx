@@ -48,7 +48,7 @@ export default function EInput({formData}: any) {
           placeholder={formData.label} 
           onChange={handleInputChange}
         />
-        {!state ? (<ProcessErrorMessage message={formData.error} />) : ''}
+        <ProcessErrorMessage message={formData.error} />
     </div>
   )
 }
