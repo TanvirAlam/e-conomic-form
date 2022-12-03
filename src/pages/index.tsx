@@ -5,6 +5,8 @@ import EForm from "../component/Form";
 import type { EForms } from '../types/typings'
 import { fetchEForms } from "../utils/fetchEForm";
 
+import { FormProvider } from '../utils/FormContext'
+
 type Props = {
   eFromData: EForms[]
 }
@@ -18,7 +20,9 @@ const Home = ({eFromData}: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b bg-white p-2">
-        <EForm eFromData={eFromData} />
+        <FormProvider>
+          <EForm eFromData={eFromData} />
+        </FormProvider>
       </main>
     </>
   );
