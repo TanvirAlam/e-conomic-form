@@ -12,11 +12,16 @@ type Props = {
 
 export default function EconomicForm({eFromData}: Props) {
     const [state, setState] = useContext(FormContext)
-    
+
+    const handleSubmitForm = (e: { preventDefault: () => void; }) => {
+        e.preventDefault()
+        console.log("Form submitted:>>>", state)
+    }
+
     return (
         <section className="bg-[#2d2b34] w-full lg:w-[480px] rounded-lg">
             <div className="w-full">
-                <form className="shadow-md rounded px-8 pt-6 mb-4">
+                <form onSubmit={handleSubmitForm} className="shadow-md rounded px-8 pt-6 mb-4">
                     {
                         eFromData?.sort((a:any, b:any) => (a.sortNum > b.sortNum) ? 1 : -1)
                             .map((formData: any) => {
@@ -45,7 +50,7 @@ export default function EconomicForm({eFromData}: Props) {
                         })
                     }
                     <div className="flex items-center justify-center relative p-10">
-                        <button className="bg-[#ef7d00] hover:bg-[#ef7d00]/50 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:shadow-outline" type="button">
+                        <button type="submit" className="bg-[#ef7d00] hover:bg-[#ef7d00]/50 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:shadow-outline">
                             Submit
                         </button>
                     </div>
