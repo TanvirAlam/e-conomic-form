@@ -6,6 +6,6 @@ type Props = {
 
 export default function ProcessErrorMessage({ message }: Props) {
   return (
-        <p className={`text-red-500 text-xs text-right pt-2`}>{message}</p>
+        <p className={`text-red-500 text-xs text-right pt-2 animate-pulse`}>{message}</p>
   )
 }
