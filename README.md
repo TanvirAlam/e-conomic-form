@@ -39,9 +39,14 @@ Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/ver
 
 -[x] On desktop, the form should have a width of 480px (and be horizontally centered). On mobile, the form should fill out 90% of the screen (and also be horizontally centered). You decide yourself what size to use for mobile
 
--[ ] Please make form components configurable. Meaning that an employee (CMS Editor) with some minimal training should be able to change fields validation rules, add/remove fields to form, and change field labels.
+-[x] Please make form components configurable. Meaning that an employee (CMS Editor) with some minimal training should be able to change fields validation rules, add/remove fields to form, and change field labels.
 
--[ ] 3 fields are required in the form (marked by asterixes). The message about missing data should be displayed below the field (see example to the right). Validation should happen when the user submits a
+-[x] 3 fields are required in the form (marked by asterixes). The message about missing data should be displayed below the field (see example to the right). Validation should happen when the user submits a
 form. Phone field has a popup functionality.
 
 -[x] You are free to use any libs you need, like jQuery or just clean JavaScript. You decide.
+
+## Animation:
+  ![images/Peek_2022-12-03_20-29.gif](images/Peek_2022-12-03_20-29.gif)
+  
+## Flow Chart
