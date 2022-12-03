@@ -27,7 +27,7 @@ export default function EInput({formData}: any) {
           type={formData.inputOptions} 
           placeholder={formData.label} 
         />
-        <p className="text-red-500 text-xs text-right pt-1">{formData.error}</p>
+        <p className="hidden text-red-500 text-xs text-right pt-1">{formData.error}</p>
     </div>
   )
 }

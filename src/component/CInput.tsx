@@ -22,7 +22,7 @@ const AcceptenceInput = ({formData}: any) => {
                 {formData.checkboxLinkText}{" "}
                 <Link className="border-b" href={formData.checkboxLinkName1url}>{formData.checkboxLinkName1}</Link>{" "}og{" "} 
                 <Link className="border-b" href={formData.checkboxLinkName2url}>{formData.checkboxLinkName2}</Link></p>
-            <p className="text-red-500 text-xs text-right">{formData.checkboxLinkError}</p>
+            <p className="hidden text-red-500 text-xs text-right">{formData.checkboxLinkError}</p>
         </div>
     )
 }
