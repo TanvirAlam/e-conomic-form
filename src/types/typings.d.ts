@@ -21,7 +21,7 @@ export interface EForms extends SanityBody {
 }
 
 export interface StateObject {
-    formSubmit: boolean;
+    formSubmited: boolean;
     flName: string;
     isFLNameEmpty: boolean;
     phone: number;
