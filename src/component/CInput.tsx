@@ -1,18 +1,19 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
 import { FormContext } from '../utils/FormContext'
+import type { StateObject } from '../types/typings'
 import ProcessErrorMessage from '../utils/ProcessErrorMessage'
 
 export default function CInput({formData}: any) {
     const [state, setState] = useContext(FormContext)
 
-    const handleInputChange = (e: any) => {
+    const handleInputChange = (e: { target: { id: any } }) => {
         switch(e.target.id) {
             case "cMust":
-                setState((state: any) => ({ ...state, acceptence: !state.acceptence }))
+                setState((state: StateObject) => ({ ...state, acceptence: !state.acceptence }))
                 break;
             case "cNormal":
-                setState((state: any) => ({ ...state, newsletter: !state.newsletter }))
+                setState((state: StateObject) => ({ ...state, newsletter: !state.newsletter }))
                 break;
             default:
                 console.log('App is running')
@@ -23,7 +24,7 @@ export default function CInput({formData}: any) {
         <div className="mb-6 flex space-x-2 h-14 relative">
             <input type="checkbox" className="w-6 h-6 text-[#ef7d00]" id={formData.inputOptions} onChange={handleInputChange} />
             {
-                formData.inputOptions === "cMust" && (<AcceptenceInput formData={formData} />) 
+                formData.inputOptions === "cMust" && (<AcceptenceInput formData={formData} state={state} />) 
             }
             {
                 formData.inputOptions === "cNormal" && (<NewsletterAcceptence formData={formData} />) 
@@ -32,14 +33,16 @@ export default function CInput({formData}: any) {
     )
 }
 
-const AcceptenceInput = ({formData}: any) => {
+const AcceptenceInput = ({formData, state}: any) => {
     return (
         <div>
             <p className="block text-white text-sm">
                 {formData.checkboxLinkText}{" "}
                 <Link className="border-b" href={formData.checkboxLinkName1url}>{formData.checkboxLinkName1}</Link>{" "}og{" "} 
                 <Link className="border-b" href={formData.checkboxLinkName2url}>{formData.checkboxLinkName2}</Link></p>
-                <ProcessErrorMessage message={formData.checkboxLinkError} />
+                {
+                    state.formSubmited && !state.acceptence ? <ProcessErrorMessage message={formData.checkboxLinkError} /> : null
+                }
         </div>
     )
 }

@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useContext } from 'react'
-import type { EForms } from '../types/typings';
+import type { EForms, StateObject } from '../types/typings';
 import CInput from './CInput';
 import ELinks from './ELinks';
 import EInput from './Input';
@@ -15,6 +16,7 @@ export default function EconomicForm({eFromData}: Props) {
 
     const handleSubmitForm = (e: { preventDefault: () => void; }) => {
         e.preventDefault()
+        setState((state: StateObject) => ({ ...state, formSubmited: true }))    
         console.log("Form submitted:>>>", state)
     }
 

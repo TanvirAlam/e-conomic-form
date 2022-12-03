@@ -1,7 +1,7 @@
 import React from 'react'
 
 type Props = {
-    message: string
+    message: string;
 }
 
 export default function ProcessErrorMessage({ message }: Props) {

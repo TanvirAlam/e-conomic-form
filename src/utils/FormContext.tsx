@@ -1,10 +1,23 @@
 import React, { useState } from 'react'
+import type { StateObject } from '../types/typings';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const FormContext = React.createContext([{}, () => { }])
+const FormContext = React.createContext({})
 
 const FormProvider = ({ children }: any) => {
-    const [state, setState] = useState({})
+
+    const InitialStateValues = {
+      formSubmited: false,
+      flName: '',
+      isFLNameEmpty: true,
+      phone: 0,
+      isPhoneEmpty: true,
+      email: '',
+      isEmailEmpty: true,
+      acceptence: false,
+      newsletter: false
+    }
+
+    const [state, setState] = useState<StateObject>(InitialStateValues)
     
     return (
         <FormContext.Provider value= {[state, setState]} >

@@ -33,8 +33,18 @@ export default defineType({
             },
         }),
         defineField({
-            name: 'error',
-            title: 'Error Message',
+            name: 'flErrorMessage',
+            title: 'FL Error Message',
+            type: 'string',
+        }),
+        defineField({
+            name: 'phErrorMessage',
+            title: 'Phone Error Message',
+            type: 'string',
+        }),
+        defineField({
+            name: 'emErrorMessage',
+            title: 'Email Error Message',
             type: 'string',
         }),
         defineField({

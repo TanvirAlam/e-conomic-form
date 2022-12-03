@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { AiOutlineQuestionCircle } from 'react-icons/ai';
+import type { StateObject } from '../types/typings';
 import { FormContext } from '../utils/FormContext';
 import ProcessErrorMessage from '../utils/ProcessErrorMessage';
 import Tooltip from '../utils/Tooltips';
@@ -7,16 +8,16 @@ import Tooltip from '../utils/Tooltips';
 export default function EInput({formData}: any) {
   const [state, setState] = useContext(FormContext)
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e: { target: { id: any; value: any; }; }) => {
     switch(e.target.id) {
       case "text":
-        setState((state: any) => ({ ...state, flName: e.target.value }))
+        setState((state: StateObject) => ({ ...state, flName: e.target.value, isFLNameEmpty: !e.target.value }))
         break;
       case "number":
-        setState((state: any) => ({ ...state, phone: e.target.value }))
+        setState((state: StateObject) => ({ ...state, phone: e.target.value, isPhoneEmpty: !e.target.value }))
         break;
       case "email":
-        setState((state: any) => ({ ...state, email: e.target.value }))
+        setState((state: StateObject) => ({ ...state, email: e.target.value, isEmailEmpty: !e.target.value }))
         break;
       default:
         console.log('App is running')
@@ -48,7 +49,15 @@ export default function EInput({formData}: any) {
           placeholder={formData.label} 
           onChange={handleInputChange}
         />
-        <ProcessErrorMessage message={formData.error} />
+        {
+          state.formSubmited && state.isFLNameEmpty ? <ProcessErrorMessage message={formData.flErrorMessage} /> : null
+        }
+        {
+          state.formSubmited && state.isPhoneEmpty ? <ProcessErrorMessage message={formData.phErrorMessage} /> : null
+        }
+        {
+          state.formSubmited && state.isEmailEmpty ? <ProcessErrorMessage message={formData.emErrorMessage} /> : null
+        }
     </div>
   )
 }

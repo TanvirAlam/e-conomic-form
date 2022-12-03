@@ -19,3 +19,15 @@ export interface EForms extends SanityBody {
     error: string;
     toolkit: string;
 }
+
+export interface StateObject {
+    formSubmit: boolean;
+    flName: string;
+    isFLNameEmpty: boolean;
+    phone: number;
+    isPhoneEmpty: boolean;
+    email: string;
+    isEmailEmpty: boolean;
+    acceptence: boolean;
+    newsletter: boolean;
+}
