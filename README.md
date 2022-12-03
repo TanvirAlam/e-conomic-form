@@ -48,5 +48,8 @@ form. Phone field has a popup functionality.
 
 ## Animation:
   ![images/Peek_2022-12-03_20-29.gif](images/Peek_2022-12-03_20-29.gif)
-  
+
+  ![images/Peek_2022-12-03_20-58.gif](images/Peek_2022-12-03_20-58.gif)
+
 ## Flow Chart
+![images/flowChart.png](images/flowChart.png)
