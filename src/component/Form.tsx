@@ -52,7 +52,7 @@ export default function EconomicForm({eFromData}: Props) {
                         })
                     }
                     <div className="flex items-center justify-center relative p-10">
-                        <button type="submit" className="bg-[#ef7d00] hover:bg-[#ef7d00]/50 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:shadow-outline">
+                        <button data-testid="button" type="submit" className="bg-[#ef7d00] hover:bg-[#ef7d00]/50 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:shadow-outline">
                             Submit
                         </button>
                     </div>
